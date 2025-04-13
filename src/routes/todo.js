@@ -24,6 +24,16 @@ router.get('/get/:id',async(req,res)=>{
     res.status(200).json(todo);
 })
 
+router.put('/update/:id',async(req,res)=>{
+    const id=req.params.id;
+    const {title,description}=req.body;
+    const result = await usermodel.updateOne(
+        { _id: id }, 
+        { $set: { title, description } } 
+      );
+    res.status(200).json(result);
+})
+
 router.delete('/delete/:id',async(req,res)=>{
     const id=req.params.id;
     const todo=await usermodel.deleteOne({_id:id});
