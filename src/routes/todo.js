@@ -11,7 +11,7 @@ router.get('/home',(req,res)=>{
 router.post('/', async(req,res)=>{
     const {title,description}=req.body;
     const todo=await usermodel({title,description});
-    res.status(200).send(todo);
+    res.send(todo);
 })
 
 
