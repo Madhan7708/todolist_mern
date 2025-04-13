@@ -15,6 +15,15 @@ router.post('/', async(req,res)=>{
     res.status(200).send(todo);
 })
 
+router.get('/get',async(req,res)=>{
+    const todo =await usermodel.find();
+    res.status(200).json(todo);
+})
 
+router.get('/get/:id',async(req,res)=>{
+    const id=req.params.id;
+    const todo =await usermodel.findOne({_id:id});
+    res.status(200).json(todo);
+})
 
 module.exports=router;
