@@ -6,15 +6,15 @@ const todoRouter=require('./routes/todo');
 app.use('/todo',todoRouter);
 
 
-mongoose.connect('mongodb://localhost:27017/crud').then(()=>{
-    // app.listen(3000,()=>{
-    //     console.log("server is running at 3000 and db connected");
-    // })
-    console.log("DB connected");
-})
-.catch((err)=>{
-    console.log(err);
-})
+// mongoose.connect('mongodb://localhost:27017/crud').then(()=>{
+//     // app.listen(3000,()=>{
+//     //     console.log("server is running at 3000 and db connected");
+//     // })
+//     console.log("DB connected");
+// })
+// .catch((err)=>{
+//     console.log(err);
+// })
 
 app.listen(3000,()=>{
         console.log("server is running at 3000 and db connected");
